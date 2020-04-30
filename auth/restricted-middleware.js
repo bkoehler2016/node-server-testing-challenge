@@ -8,7 +8,7 @@ module.exports = (req, res, next) => {
     jwt.verify(token, jwtSecret, (err, decodedToken) => {
       if(err) {
         //not valid token
-        res.status(401).json({ You: "can't touch this!" })
+        res.status(401).json({ You: "Welcome To Hogwarts House" })
       }else {
         req.house = decodedToken.house;
         next();
